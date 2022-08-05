@@ -1,0 +1,2 @@
+export const CCAVENUE_ACQUIRER = 2002;
+export const FLEXIPAY_BY_HDFC_ACQUIRER = 9003;

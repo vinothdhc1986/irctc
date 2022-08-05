@@ -1,0 +1,1758 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+
+.error-block {
+  color: red;
+  font-size: 18;
+  margin-left: 1%;
+  font-weight: bold;
+}
+
+.loader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 50%;
+  height: 50%;
+  z-index: 1;
+/* margin: auto; */
+}
+body {
+  background: #fff;
+  color: #231f20;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+  font-size: 14px;
+}
+/****************** common css**********/
+a {
+  color: #1a1a1a;
+  transition: 0.5s;
+  font-size: 14px;
+}
+a:hover,
+a:active,
+a:focus {
+  color: #1a1a1a;
+  outline: none;
+  text-decoration: none;
+  font-size: 14px;
+}
+p {
+  padding: 0;
+  margin: 0 0 30px 0;
+  color: #231f20;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #3fb449;
+}
+h2 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #00112c;
+}
+h3 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #00112c;
+}
+.fw-600 {
+  font-weight: 600;
+}
+.fs-11{font-size:11px;}
+.pl-10{padding-left:10px;}
+.pl-0{padding-left:0px!important;}
+.pr-0{padding-right:0px!important;}
+.text-blue{color:#065BAA}
+.text-green {
+  color: #3fb449;
+}
+.text-black {
+  color: #000;
+}
+.text-red {
+  color: #fb0000;
+}
+.failed {
+  margin-top: 20px;
+}
+.max-width-100 {
+  max-width: 100%;
+}
+/************************* color css*******************/
+body {
+  background: url("../images/bg-texture.png") repeat;
+}
+
+header {
+  border-top: 5px solid #3fb449;
+}
+.main-header {
+  border-top: 5px solid #328f3a;
+}
+
+.darkHeader {
+  background: #efefef;
+}
+/*--------------------------------------------------------------
+# Common css
+--------------------------------------------------------------*/
+.rows{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px;font-size: small;}
+.row-centered {
+  text-align: center;
+}
+.col-centered {
+  display: inline-block;
+  float: none;
+  text-align: left;
+  text-align: center;
+}
+.white-block {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 1px 5px #99999933;
+}
+.bdr-top {
+  border-top: 1px solid #ebebeb;
+}
+/**************************** form css ***********************/
+.form-control {
+  height: 48px;
+  border: 1px solid #ebebeb;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+}
+label {
+  position: absolute;
+  top: 13px;
+  left: 25px;
+  width: 90%;
+  color: #4d4d4d;
+  transition: 0.2s all;
+  cursor: text;
+  font-weight: 400;
+  font-size: 14px;
+}
+.form-control:focus {
+  border-color: #40b349;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.form-control:focus {
+  border-color: #40b349;
+}
+input.form-control.has-error ~ label {
+  color: red;
+}
+input.form-control.has-error {
+  border-color: red;
+}
+/*********input.form-control:valid~label,****/
+input.form-control:focus ~ label,
+input[required]:valid ~ label,
+input ~ label.hasValue,
+input[data-value]:not([data-value=""]) ~ label,input:not([value=""])~label {
+  font-size: 14px;
+  top: -4px;
+  width: auto;
+  color: #4d4d4d;
+  background: #fff;
+  padding: 3px 5px;
+  line-height: 2px;
+  height: 7px;
+  box-shadow: none;
+}
+input.form-control:focus ~ label {
+  color: #40b349;
+}
+
+select:focus ~ label {
+  color: #40b349;
+  font-size: 14px;
+  top: -1px;
+  width: auto;
+  background: #fff;
+  line-height: 2px;
+  padding: 0px 5px;
+}
+select.form-control {
+  background: #fff;
+  /* Here's the code we need */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+}
+
+select.form-control:after {
+  font-family: FontAwesome;
+  content: "\f107";
+  font-size: 28px;
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  color: #434b67;
+  pointer-events: none;
+}
+
+.find-text {
+  position: absolute;
+  right: 25px;
+  top: 6px;
+  padding: 0px;
+  margin: 0px;
+  text-align: right;
+  font-size: 14px;
+  color: #40b349;
+  font-weight: 500;
+  line-height: 34px;
+}
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  border-color: #40b349;
+  background-color: #40b349;
+}
+
+.checkbox {
+  padding-left: 0px;
+  margin: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+.checkbox input[type="checkbox"] {
+  opacity: 0;
+}
+.checkbox input:focus ~ label a,
+.checkbox input:valid ~ label a,
+.checkbox input ~ label.hasValue a {
+  font-size: 13px;
+}
+.checkbox input:focus ~ label,
+.checkbox input:valid ~ label,
+.checkbox input ~ label.hasValue {
+  font-size: 13px;
+  top: -10px;
+  width: 99%;
+  color: #1a1a1a;
+  background: transparent;
+  padding: 3px 1%;
+  line-height: 16px;
+  height: auto;
+  box-shadow: none;
+  position: relative;
+}
+
+.checkbox input[type="checkbox"]:checked + label::after {
+  background: #45a8a3;
+  border: 1px solid #45a8a3;
+}
+.checkbox label::before {
+  content: "";
+  top: 1px;
+  display: inline-block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 0;
+  margin-left: -23px;
+  border: 1px solid #707070;
+  border-radius: 0px;
+  background-color: #fff;
+  -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+.checkbox input[type="checkbox"]:checked + label::after {
+  font-family: "FontAwesome";
+  content: "\f00c";
+  left: -24px;
+  top: 0px;
+  position: absolute;
+  background: #21b155;
+  border: 1px solid #21b155;
+  padding: 0px 3px;
+  width: 22px;
+  height: 22px;
+  line-height: 20px;
+  color: #fff;
+  border-radius: 0px;
+}
+
+/* .checkbox {
+    padding-left: 0px;
+    margin: 0px;
+    position: relative;
+    top: 0px;
+	width:100%;
+}
+
+
+.checkbox input[type="checkbox"] {
+    opacity: 0;
+}
+.checkbox input:focus~label a,.checkbox input:valid~label a,.checkbox input~label.hasValue a{
+	font-size: 13px;
+}
+.checkbox input:focus~label,.checkbox input:valid~label,.checkbox input~label.hasValue{
+	font-size: 13px;
+    top: -10px;
+    width: 99%;
+    color: #1A1A1A;
+    background: transparent;
+    padding: 3px 1%;
+    line-height: 16px;
+    height: auto;
+    box-shadow: none;
+    position: relative;
+}
+.checkbox label::before {
+    content: "";
+       top: 1px;
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 0;
+    margin-left: -23px;
+    border: 1px solid #707070;
+    border-radius: 0px;
+    background-color: #fff;
+    -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+/* .checkbox input[type="checkbox"]:checked + label::after
+ {font-family: 'FontAwesome';    content: "\f00c";    left: -24px;    top: 0px;
+		position: absolute;    background: #21b155;  
+		
+		border: 1px solid #21b155; padding: 0px 3px;  width: 22px;  height: 22px; line-height: 20px; color: #fff; border-radius: 0px;} */
+/* 
+		.checkbox input[type="checkbox"]:checked + label::after
+		
+		{font-family: 'FontAwesome';    content: "\f00c";    left: -24px;   
+			
+			
+			top: 0px;    position: absolute;    background: #21b155;   
+			
+			border: 1px solid #21b155; padding: 0px 3px;  width: 22px;  height: 22px; line-height: 20px; color: #fff; border-radius: 0px;} */
+*/ .form-group.has-error .form-control {
+  border: 1px solid #ff0000;
+  transition-duration: 0.3s;
+}
+.form-group.has-error input ~ label {
+  color: #f44336;
+}
+.cancel {
+  color: #1a1a1a;
+}
+/**************************** form css ***********************/
+
+/********************** button css***********************************/
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  box-shadow: none;
+}
+.btn {
+  padding: 12px 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 0;
+}
+.btn.btn-bdr-green {
+  color: #3fb449;
+  border: 1px solid #3fb449;
+  font-weight: 500;
+}
+.btn.btn-bdr {
+  color: #000;
+  border: 1px solid #959595;
+}
+.btn-medium {
+  padding: 12px 10px;
+  min-width: 96px;
+}
+.btn-small {
+  padding: 3px 10px;
+  min-width: 96px;
+}
+.emi-tenure .custom-control.bdr-btm-0 {
+  border-bottom: 0;
+}
+.btn-grey {
+  background: #d5d5d5;
+  color: #000000;
+}
+.btn-green {
+  background: #3fb449;
+  background: -moz-linear-gradient(left, #3fb449 0%, #26a546 100%);
+  background: -webkit-linear-gradient(left, #3fb449 0%, #26a546 100%);
+  background: linear-gradient(to right, #3fb449 0%, #26a546 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3FB449', endColorstr='#26A546',GradientType=1 );
+  color: #fff;
+}
+
+.btn-blue{    background: linear-gradient(150deg, #0B6AC2 0%, #1b6cb7 70%, #29389c 100%);-webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;    background-size: 110% 100%;    background-position: right bottom;cursor:pointer;	font-weight: 400;    color: #fff!important;padding: 4px 10px;}
+.btn-blue.active, .btn-blue:active, .btn-blue:focus, .btn-blue:hover{background-position: left bottom;}
+/********************** button css***********************************/
+
+/********************** EMI Flow css***********************************/
+
+.orbanklist {
+  text-align: center;
+  margin: 1em 0;
+}
+.orbanklist:after {
+  content: "";
+  width: 46%;
+  border-bottom: solid 1px #e9e9e9;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 1;
+}
+.orbanklist:before {
+  content: "";
+  width: 46%;
+  border-bottom: solid 1px #e9e9e9;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  z-index: 1;
+}
+.orbanklist span {
+  background: #fff;
+}
+.emi-plan,
+.checkeligibility {
+  margin-top: 20px;
+}
+
+.roi,
+.emi {
+  font-size: 14px;
+  color: #959595;
+  font-weight: 300;
+}
+.instant-discount {
+  font-size: 12px;
+  color: #959595;
+  border-top: 1px solid #d5d5d5;
+  border-bottom: 1px solid #d5d5d5;
+  padding: 20px 5px 5px 5px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.emi-tenure.active .instant-discount {
+  color: #3fb449;
+}
+.emi-tenure .custom-control {
+  padding: 0px;
+  width: 100%;
+}
+.emi-name {
+  color: #3fb449;
+  font-size: 12px;
+}
+.emi-tenure .custom-control .custom-control-label {
+  width: 88%;
+  font-size: 16px;
+  top: 0;
+  padding: 0;
+  line-height: 20px;
+}
+.emi-details-link a {
+  font-size: 12px;
+  color: #959595;
+  text-decoration: underline;
+  line-height: 32px;
+}
+#sendOtp .modal-body p {
+  color: #959595;
+  font-size: 12px;
+}
+/********************** EMI css css***********************************/
+
+/*************popup css***********************************/
+
+/* modal popup columns styles */
+.modal-content {
+  border-radius: 0;
+}
+.modal-dialog {
+  top: calc(30% - 25px);
+}
+.modal-dialog.height-big {
+  top: calc(20% - 25px);
+}
+.modal-dialog.height-EMI {
+  top: calc(20% - 25px);
+}
+.close {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 100;
+  opacity: 1;
+  cursor: pointer;
+}
+.modal-backdrop.show {
+  background: #000;
+  filter: alpha(opacity=85);
+  opacity: 0.85;
+}
+.modal-open .modal {
+  padding-right: 0 !important;
+}
+/* modal popup columns styles */
+
+/********************** Send OTP popup css***********************************/
+.note {
+  color: #959595;
+  font-size: 14px;
+}
+.note-text {
+  color: #959595;
+  font-size: 14px;
+  margin: 0;
+  border-top: 1px solid #d5d5d5;
+  padding: 10px;
+}
+.dot {
+  height: 16px;
+  width: 16px;
+  background-color: #d5d5d5;
+  border-radius: 50%;
+  display: inline-block;
+  border: 0;
+}
+.enterotp .form-control {
+  border: 0;
+  border-bottom: 1px solid #ebebeb;
+  font-size: 30px;
+  text-align: center;
+  display: inline-block;
+  letter-spacing: 40px;
+}
+.enterotp input:focus ~ label,
+.enterotp input:valid ~ label,
+.enterotp input ~ label.hasValue {
+  display: none;
+  top: 0;
+}
+/********************** Send OTP popup css***********************************/
+
+/********************** Payment Summary popup css***********************************/
+.paymentSummaryDetails p {
+  margin: 0 0 15px 0;
+}
+.final-price {
+  border-top: solid 1px #e9e9e9;
+  padding-top: 20px;
+}
+.final-price p {
+  margin: 0 0 10px 0;
+}
+
+/********************** Payment Summary popup css***********************************/
+.cardeligibilityfailuremsg p {
+  line-height: 23px;
+}
+.cardeligibilityfailuremsg p.text-green {
+  font-size: 18px;
+}
+.terms-conditions-panel h2 {
+  margin-bottom: 15px;
+}
+.terms-conditions-panel ul {
+  padding: 0 0 0 20px;
+  margin: 0;
+}
+/*************popup css***********************************/
+
+/*--------------------------------------------------------------
+# Left side panel
+--------------------------------------------------------------*/
+.left-sidepanel {
+  background: #ffffff;
+  box-shadow: 0px 10px 30px #99999933;
+  padding: 20px 0;
+}
+.nav.nav-tabs li {
+  border-top: 1px Solid #e9e9e9;
+  width: 100%;
+  margin-bottom: 0px;
+  padding: 18px 20px;
+  cursor: pointer;
+}
+.nav.nav-tabs li span {
+  padding-left: 40px;
+}
+.nav.nav-tabs li span.special-offer {    margin-top: -5px;padding-left: 0px;    position: absolute;    right: 10px;}
+.nav.nav-tabs li.active {
+  background: transparent linear-gradient(180deg, #3fb449 0%, #26a546 100%) 0%
+    0% no-repeat padding-box;
+  border-bottom: 1px solid #3fb449;
+}
+.nav.nav-tabs li a {
+  display: flex;
+  font-size: 16px;
+  letter-spacing: 0;
+  color: #000000;
+  
+}
+.nav.nav-tabs li.active a {
+  font-size: 16px;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+.nav.nav-tabs li:last-child,
+.nav-tabs {
+  border-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Footer 
+--------------------------------------------------------------*/
+
+footer {
+  background: #00112c;
+  font-size: 12px;
+  color: #fff;
+  padding: 16px 0;
+}
+.copyright {
+  text-align: center;
+  color: #fff;
+}
+.copyright a {
+  color: #fff;
+  font-size: 13px;
+}
+
+.circle-loader-bg {
+  background: #f2f8ee 0% 0% no-repeat padding-box;
+  padding: 20px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.circle-loader {
+  margin-bottom: 0;
+  border: 6px solid rgb(0, 0, 0);
+  border-left-color: #5cb85c;
+  animation: loader-spin 1.2s infinite linear;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 50%;
+  width: 11em;
+  height: 11em;
+}
+.timer,
+.count {
+  color: #1a1818;
+  font-size: 42px;
+  position: relative;
+  top: -113px;
+  left: -3px;
+  height: 0;
+}
+.load-complete {
+  -webkit-animation: none;
+  animation: none;
+  border-color: #5cb85c;
+  transition: border 500ms ease-out;
+}
+.checkmark {
+  display: none;
+}
+.checkmark.draw:after {
+  animation-duration: 800ms;
+  animation-timing-function: ease;
+  animation-name: checkmark;
+  transform: scaleX(-1) rotate(135deg);
+}
+.checkmark:after {
+  opacity: 1;
+  height: 3.5em;
+  width: 1.75em;
+  transform-origin: left top;
+  border-right: 3px solid #5cb85c;
+  border-top: 3px solid #5cb85c;
+  content: "";
+  left: 3em;
+  top: 5.5em;
+  position: absolute;
+}
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes checkmark {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+  20% {
+    height: 0;
+    width: 1.75em;
+    opacity: 1;
+  }
+  40% {
+    height: 3.5em;
+    width: 1.75em;
+    opacity: 1;
+  }
+  100% {
+    height: 3.5em;
+    width: 1.75em;
+    opacity: 1;
+  }
+}
+
+/*-- Extra small devices (portrait phones, less than 320px)-------*/
+/*--No media query for `xs` since this is the default in Bootstrap-------*/
+
+/*-// Small devices (landscape phones, 576px and up)-------*/
+@media (min-width: 320px) {
+  h3 {
+    font-size: 14px;
+  }
+	.content{    margin-top: 150px;}
+  .accordion > .card .card-header {
+    margin-bottom: 0;
+  }
+
+  .accordion .card-header.collapsed a span {
+    font-size: 16px;
+    letter-spacing: 0;
+    color: #000000;
+  }
+  .accordion .card-header a span {
+    padding: 0 0 0 40px;
+    font-size: 16px;
+    letter-spacing: 0;
+    color: #fff;
+  }
+  .accordion .card-header a span.special-offer{margin-top:-5px;     padding: 0;    float: right;}
+  .accordion .card-header.collapsed .cc-tab-mobile {
+    background: url(../images/icons/card-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .accordion .card-header.collapsed .emi-tab-mobile {
+    background: url(../images/icons/emi-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .accordion .card-header.collapsed .fullpayment-tab-mobile {
+    display: flex;
+    background: url(../images/icons/pre-booking-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+
+  
+.interest-charged {font-size:11px;    border-bottom: 1px solid #d5d5d5; padding:5px; 
+    width: 100%; text-align:left;margin-bottom: 15px;    color: #959595;}
+.accordion .card-header .flexipay-tab-mobile {   
+   background: url(../images/icons/flexipay-active-ic.png) no-repeat;    padding: 7px 0;  }
+.accordion .card-header.collapsed .flexipay-tab-mobile{background:url(../images/icons/flexipay-ic.png) no-repeat; padding:7px 0;}
+
+
+
+
+  .accordion .card-header.collapsed .wallet-tab-mobile {
+    background: url(../images/icons/wallet-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .accordion .card-header.collapsed .upi-tab-mobile {
+    background: url(../images/icons/upi-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .accordion .card-header.collapsed .qr-tab-mobile {
+    background: url(../images/icons/qr-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .accordion .card-header.collapsed .netbanking-tab-mobile {
+    background: url(../images/icons/net-banking-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .accordion .card-header.collapsed .nbfc-tab-mobile {
+    background: url(../images/icons/nbfc-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+
+  .accordion .card-header .cc-tab-mobile {
+    background: url(../images/icons/card-active-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .accordion .card-header .emi-tab-mobile {
+    background: url(../images/icons/emi-active-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .accordion .card-header .fullpayment-tab-mobile {
+    background: url(../images/icons/pre-booking-active-ic.png) no-repeat;
+    padding: 7px 0;
+    display: flex;
+  }
+  .accordion .card-header .wallet-tab-mobile {
+    background: url(../images/icons/wallet-active-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .accordion .card-header .upi-tab-mobile {
+    background: url(../images/icons/upi-active-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .accordion .card-header .qr-tab-mobile {
+    background: url(../images/icons/qr-active-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .accordion .card-header .netbanking-tab-mobile {
+    background: url(../images/icons/net-banking-active-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .accordion .card-header .nbfc-tab-mobile {
+    background: url(../images/icons/nbfc-active-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+
+  
+  .merchant-details {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 5px #99999933;
+    padding: 15px;
+  }
+  .merchant-details br {
+    display: block;
+  }
+  .merchant-details-irctc {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 5px #99999933;
+    padding: 15px;
+  }
+  .merchant-details-irctc br {
+    display: block;
+  }
+  .right-sidepanel {
+    min-height: 389px;
+  }
+
+  /*--------------------------------------------------------------
+	# Header
+	--------------------------------------------------------------*/
+  .main-header {
+    padding: 15px 0;
+  }
+  .logo {
+    height: 36px;
+  }
+  .merchant-transaction,
+  .total-amount-paid {
+    font-size: 12px;
+    color: #959595;
+  }
+  .total-amount {
+    font-size: 18px;
+    color: #000000;
+  }
+
+  .instant-discount {
+    float: left;
+    border: 0;
+  }
+  .emi-details-link.pull-left {
+    float: right;
+  }
+  /*--------------------------------------------------------------
+# :Left Panel Menu
+--------------------------------------------------------------*/
+  .left-sidepanel h1 {
+    padding-left: 15px;
+    margin: 0;
+    font-size: 16px;
+  }
+  .left-sidepanel .nav {
+    display: none;
+  }
+  /*--------------------------------------------------------------
+# :right Panel Menu
+--------------------------------------------------------------*/
+  .right-sidepanel {
+    padding: 0;
+  }
+  .accordion .card-header .fa-angle-down,  .accordion .card-header .fa-angle-up{
+    font-weight: 600;
+    font-size: 24px;
+    color: #fff;
+  }
+  .accordion .card-header.collapsed .fa-angle-down,  .accordion .card-header .fa-angle-up {
+    font-weight: 600;
+    font-size: 24px;
+    color: #000;
+  }
+  .card {
+    border: 0;
+    border-top: 1px Solid #e9e9e9;
+  }
+  .card-header.collapsed {
+    background: #fff;
+    border-top: 1px Solid #e9e9e9;
+    width: 100%;
+    margin-bottom: 0px;
+    padding: 20px;
+  }
+  .card-header {
+    background: transparent linear-gradient(180deg, #3fb449 0%, #26a546 100%) 0%
+      0% no-repeat padding-box;
+    border-bottom: 0;
+    border-top: 1px solid #3fb449;
+  }
+  .card-body {
+    padding: 0;
+  }
+  .card-body h2 {
+    padding: 15px 15px 0 15px;
+    font-size: 16px;
+    margin: 0 0 10px 0;
+  }
+  .card-details {
+    margin-top: 2em;
+  }
+  /*--------------------------------------------------------------
+# :EMI Panel CSS
+--------------------------------------------------------------*/
+  .emiTypeContent {
+    margin-top: 20px;
+  }
+  #emi-type .nav-tabs .nav-link {
+    border: 0;
+    padding: 10px;
+    border-bottom: 1px Solid #e9e9e9;
+    text-align: center;
+    font-size: 14px;
+    color: #000000;
+  }
+  #card-type .nav-tabs .nav-item.nav-link:hover,
+  #card-type .nav-tabs .nav-item.nav-link:focus {
+    border: 1px solid #3fb449;
+    color: #2da947;
+  }
+
+ #PopupModalContent
+ {  overflow-y :auto;
+   max-height: 500px 
+ }
+  #card-type .nav-tabs .nav-item.nav-link.active:hover,
+  #card-type .nav-tabs .nav-item.nav-link.active:focus {
+    color: #fff;
+  }
+  #emi-type .nav-tabs .nav-link span {
+    display: none;
+  }
+  #emi-type .nav-tabs .nav-item.show .nav-link,
+  #emi-type .nav-tabs .nav-link.active {
+    color: #f3f3f3;
+    border-bottom: 4px solid #3fb449;
+    text-align: center;
+    font-size: 14px;
+    color: #3fb449;
+  }
+  #emi-type .emi-type-subheading {
+    display: block;
+    font-size: 12px;
+    padding: 0 0 0 20px;
+  }
+
+  .paynow-btn {text-align:center;}
+  #card-type nav {
+    width: 100%;
+    display: inline-flex;
+  }
+  #card-type nav .nav-tabs {
+    margin: auto;
+  }
+  #card-type .nav-tabs .nav-item.nav-link {
+    border: 1px solid #ebebeb;
+    padding: 10px 37px;
+    width: auto;
+    border-radius: 0;
+    text-align: center;
+    flex: inherit;
+  }
+  #card-type .nav-tabs .nav-item.show.nav-link,
+  #card-type .nav-tabs .nav-link.active {
+    border: 1px solid #3fb449;
+    background: transparent linear-gradient(180deg, #3fb449 0%, #26a546 100%) 0%
+      0% no-repeat padding-box;
+    color: #fff;
+    text-align: center;
+    position: relative;
+  }
+  #card-type .nav-tabs .nav-link.active:after {
+    content: "";
+    position: absolute;
+    left: 42%;
+    top: 94%;
+    width: 0;
+    height: 0;
+    clear: both;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #2aa746;
+  }
+  .bank-name {
+    padding: 0px;
+    text-align: center;
+  }
+  .bank-name span {
+    float: left;
+    text-align: center;
+    width: 100%;
+    margin-top: 5px;
+  }
+  .bank-list .bank-list-names,
+  .border-grey {
+    border: 1px solid #ebebeb;
+    padding: 10px;
+    background: #fff;
+    margin-bottom: 10px;
+    float: left;
+    width: 100%;
+  }
+  .bank-list .bank-list-names:focus,
+  .bank-list .bank-list-names:hover,
+  .bank-list .bank-list-names.active,
+  .border-grey.active {
+    border: 1px solid #3fb449;
+    cursor: pointer;
+  }
+  .bank-list {
+    padding: 0;
+  }
+
+  .emi-tenure .custom-control {
+    border-bottom: 1px solid #ebebeb;
+  }
+  .emi-tenure .custom-control .custom-control-label {
+    height: 40px;
+  }
+  .proceesing-request h1 {
+    font-size: 20px;
+    line-height: 26px;
+    padding-top: 30px;
+  }
+  .emi-tenure {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 1px solid #ebebeb;
+    padding: 15px;
+    display: inline-block;
+    width: 100%;
+  }
+  .emi-tenure.active {
+    border: 1px solid #3fb449;
+  }
+  .emi-tenure-block {
+    border-bottom: 1px solid #d5d5d5;
+    padding-bottom: 15px;
+  }
+  .emi-tenure-block:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+  .validate {
+    float: initial;
+    text-align: center;
+    clear: both;
+  }
+  .months,
+  .amount {
+    font-size: 14px;
+    color: #000000;
+    font-weight: 500;
+  }
+
+  .card-body h2.choose-another-plan {
+    padding: 15px;
+    border-bottom: solid 1px #e9e9e9;
+  }
+  .choose-another-plan .fa-pencil {
+    display: block;
+    margin-top: -10px;
+  }
+  .choose-another-plan .btn {
+    display: none;
+  }
+  .cvv-icon {
+    height: 24px;
+  }
+
+  .saved-cards {
+    margin-top: 2em;
+    border-bottom: 1px solid #ebebeb;
+  }
+  .bank-card {
+    background: #d5d5d5 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    width: 100%;
+    padding: 15px;
+    border-radius: 6px;
+    line-height: 21px;
+    font-size: 16px;
+  }
+  .bank-card span {
+    opacity: 0.54;
+    font-size: 13px;
+  }
+  .bank-card img {
+    height: 26px;
+    background: #fff;
+    filter: grayscale(1);
+    opacity: 0.7;
+  }
+  .bank-card.active img {
+    filter: grayscale(0);
+    opacity: 1;
+  }
+  .bank-card.active {
+    background: transparent linear-gradient(270deg, #3acce1 0%, #2b3894 100%) 0%
+      0% no-repeat padding-box;
+    color: #fff;
+  }
+  .bank-card .bank-card-select {
+    background: url("../images/icons/delete.png") no-repeat top right;
+    padding: 12px 12px;
+    position: absolute;
+    right: -7px;
+    top: -9px;
+    opacity: 1;
+  }
+  .bank-card.active .bank-card-select {
+    background: url("../images/icons/delete-active.png") no-repeat top right;
+  }
+  /*************** upi *********************/
+  .upi-input {
+    position: absolute;
+    right: 16px;
+    top: 1px;
+  }
+  .upi-input select {
+    border: 0;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    height: 46px;
+    margin-top: 0px;
+    width: 72px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 5px 10px;
+    background: #f5f5f5;
+  }
+  .upi-input .select-angle-down {
+    font-size: 16px;
+    position: absolute;
+    right: 11px;
+    top: 16px;
+  }
+  .max-width-100 {
+    max-width: 100%;
+  }
+  .paynow-btn {
+    text-align: center;
+  }
+  .proceesing-request {
+    padding: 25px 0;
+    margin: 15px 0;
+  }
+  .transaction-successful {
+    font-size: 14px;
+    color: #00112c;
+    padding-top: 15px;
+    padding-bottom: 0px;
+  }
+  /***************************payment successful block ***********************************/
+  .paymentsuccesfulblock {
+    background: url(../images/grey-success-bg-mobile.png) no-repeat center
+      center;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    background-size: inherit;
+    margin: auto;
+  }
+  .paymentsuccesfull-white-block {
+    padding: 0px;
+    width: 94%;
+    margin: 30px auto;
+  }
+  .paymentsuccesfulblock h1 {
+    font-size: 20px;
+    line-height: 26px;
+    padding-top: 0px;
+  }
+  .paymentsuccesfull-white-block p {
+    font-size: 16px;
+  }
+  /************* success*************/
+  .circle-loader {
+    width: 6em;
+    height: 6em;
+  }
+  .timer,
+  .count {
+    font-size: 20px;
+    top: 2px;
+    left: 0px;
+  }
+
+  .circle-loader-bg .timer, .circle-loader-bg .count
+  {
+    top: -29px;
+    left: 0px;
+  }
+
+  .circle-loader-bg .split{
+    top: -31px;
+    position: relative;
+  }
+  .displayedTime .split{
+    color:#00112c
+  }
+  .count,
+  .split {
+    background: transparent !important;
+  }
+  /*--------------------------------------------------------------
+# :modal popup  CSS
+--------------------------------------------------------------*/
+
+  /* .modal-body {    padding:20px  10px;}
+.modal-body  .paymentSummaryDetail {  margin:20px  0px 10px 0;}
+.modal h2 {    font-size: 20px;    line-height: 20px;}
+.modal-body  .paymentSummaryDetail p {    margin: 0 0 10px 0;    font-size: 14px;}
+.btn {    min-width: 120px;}
+.btn-medium ,.btn-small {    min-width: 96px;} */
+
+  .modal-body {
+    padding: 25px;
+  }
+
+  .modal-body-SpecialOffers {
+    padding: 25px;
+    overflow-y: scroll;
+    height: 220px;
+  }
+
+  .modal-body-iciciTNC {
+    padding: 10px;
+  }
+  
+  .modal h2 {
+    font-size: 25px;
+  }
+  .modal-body .paymentSummaryDetail {
+    margin: 30px 0px 10px 0;
+  }
+  .modal-body .paymentSummaryDetail p {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+  }
+  .btn {
+    min-width: 150px;
+  }
+  .btn-medium,
+  .btn-small {
+    min-width: 96px;
+  }
+  #SavedCardEMIPayNowButton
+  {
+    min-width: 110px;
+  }
+
+  #SavedCardPayNow
+  {
+    min-width: 110px;
+  }
+  /*--------------------------------------------------------------
+# Footer 
+--------------------------------------------------------------*/
+  .verisign-logo img,
+  .pci-logo img {
+    height: 20px;
+    margin-top: 5px;
+  }
+  .footer-top {
+    padding: 20px 0;
+    font-size: 12px;
+  }
+}
+
+/*-- Extra small devices (portrait phones, less than 576px)-------*/
+/*--No media query for `xs` since this is the default in Bootstrap-------*/
+
+/*-// Small devices (landscape phones, 576px and up)-------*/
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 533px;
+    margin: 1.75rem auto;
+  }
+  .paymentsuccesfulblock {
+    background: url(../images/grey-success-bg.png) no-repeat center center;
+    padding: 0px;
+  }
+  .copyright br {
+    display: none;
+  }
+
+
+
+ 
+}
+
+/*-// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  h3 {
+    font-size: 16px;
+  }
+  .content{    margin-top: 167px;}
+  /*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+  .main-header {
+    padding: 20px 0;
+  }
+  .logo {
+    height: auto;
+  }
+  .merchant-details-irctc br {
+    display: none;
+  }
+  .merchant-details br {
+    display: none;
+  }
+  .merchant-transaction,
+  .total-amount-paid {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .ticket-amount {
+    font-size: 16px;
+    line-height: 21px;
+    text-align: end;
+  }
+  .total-amount {
+    font-size: 18px;
+  }
+  .merchant-details {
+    padding: 18px;
+  }
+  .merchant-details-irctc {
+    padding: 5px;
+  }
+  /*--------------------------------------------------------------
+# :Left Panel Menu
+--------------------------------------------------------------*/
+  .left-sidepanel h1 {
+    padding-left: 20px;
+    margin: 0 0 20px 0;
+  }
+  .left-sidepanel .nav {
+    display: block;
+  }
+  .nav.nav-tabs li .cc-tab {
+    background: url(../images/icons/card-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  /*.nav.nav-tabs li a:hover:after,.nav.nav-tabs li a:focus:after {
+      content: ' ';
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0; background-color: #3FB449;
+
+}*/
+  .nav.nav-tabs li .emi-tab {
+    background: url(../images/icons/emi-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .nav.nav-tabs li .fullpayment-tab {
+    background:url(../images/icons/pre-booking-ic.png) no-repeat;
+     padding:7px 0;
+  }
+  .nav.nav-tabs li .wallet-tab {
+    background: url(../images/icons/wallet-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .nav.nav-tabs li .upi-tab {
+    background: url(../images/icons/upi-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .nav.nav-tabs li .qr-tab {
+    background: url(../images/icons/qr-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .nav.nav-tabs li .netbanking-tab {
+    background: url(../images/icons/net-banking-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .nav.nav-tabs li .nbfc-tab {
+    background: url(../images/icons/nbfc-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+
+  .nav.nav-tabs li.active .emi-tab {
+    background: url(../images/icons/emi-active-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .nav.nav-tabs li.active .fullpayment-tab {
+    background:url(../images/icons/pre-booking-active-ic.png) no-repeat; 
+    padding:7px 0;
+  }
+  .nav.nav-tabs li.active .cc-tab {
+    background: url(../images/icons/card-active-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .nav.nav-tabs li.active .wallet-tab {
+    background: url(../images/icons/wallet-active-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .nav.nav-tabs li.active .upi-tab {
+    background: url(../images/icons/upi-active-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .nav.nav-tabs li.active .qr-tab {
+    background: url(../images/icons/qr-active-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .nav.nav-tabs li.active .netbanking-tab {
+    background: url(../images/icons/net-banking-active-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+  .nav.nav-tabs li.active .nbfc-tab {
+    background: url(../images/icons/nbfc-active-ic.png) no-repeat;
+    padding: 7px 0;
+  }
+
+  .nav.nav-tabs li .flexipay-tab {
+    background: url(../images/icons/flexipay-ic.png) no-repeat;
+  }
+
+  .nav.nav-tabs li.active .flexipay-tab {
+    background: url(../images/icons/flexipay-active-ic.png) no-repeat;
+  }
+
+	
+
+  /*--------------------------------------------------------------
+# :right Panel Menu
+--------------------------------------------------------------*/
+  .paynow-btn {
+    text-align: left;
+  }
+  .right-sidepanel {
+    padding: 15px;
+  }
+  .card-header {
+    display: none;
+  }
+  .card {
+    border: 0;
+  }
+  .card-body {
+    padding: 15px;
+  }
+  .card-body h2 {
+    padding: 0;
+  }
+  .emiTypeContent {
+    margin-top: 40px;
+  }
+  #emi-type .nav-tabs .nav-link {
+    width: 25%;
+    font-size: 16px;
+    padding: 10px;
+    text-align: left;
+  }
+  #emi-type .nav-tabs .nav-link span {
+    display: block;
+    font-size: 12px;
+  }
+  #emi-type .nav-tabs .nav-item.show .nav-link,
+  #emi-type .nav-tabs .nav-link.active {
+    font-size: 16px;
+    text-align: left;
+  }
+  #emi-type .emi-type-subheading {
+    display: none;
+  }
+
+  .bank-list .bank-list-names,
+  .border-grey {
+    border: 1px solid #ebebeb;
+    padding: 10px;
+    text-align: center;
+    background: #fff;
+    margin-bottom: 10px;
+    float: left;
+    width: 98%;
+  }
+  .paymentsuccesfulblock h1,
+  .proceesing-request h1 {
+    font-size: 31px;
+    line-height: 36px;
+    padding-top: 30px;
+  }
+  .bank-name {
+    padding: 0px;
+    font-weight: 300;
+  }
+  .bank-name span {
+    float: none;
+    text-align: left;
+    width: auto;
+  }
+  .bank-list .bank-list-names.active .bank-name {
+    background: #fff;
+  }
+  .bank-list .bank-list-names img {
+    padding-right: 10px;
+  }
+
+  .emi-plan {
+    display: block;
+  }
+  .mobile-emi-plan {
+    display: none;
+  }
+  .emi-plan h3 {
+    display: block;
+  }
+
+  .instant-discount {
+    float: right;
+    border-top: 1px solid #d5d5d5;
+    width: 100%;
+    border-bottom: 1px solid #d5d5d5;
+  }
+  .emi-tenure .custom-control,
+  .emi-tenure-block {
+    border-bottom: 0;
+  }
+  .emi-details-link.pull-left {
+    float: left;
+  }
+  .emi-tenure .custom-control .custom-control-label {
+    height: 40px;
+  }
+  .bank-list {
+    padding: 0 15px;
+  }
+  .validate {
+    clear: inherit;
+  }
+  .months,
+  .amount {
+    font-size: 15px;
+  }
+  .card-body h2 {
+    font-size: 20px;
+    margin: 0 0 20px 0;
+  }
+  .card-details {
+    margin-top: 3em;
+  }
+  .card-body h2.choose-another-plan {
+    line-height: 52px;
+    padding: 0 0 15px 0px;
+    border-bottom: solid 1px #e9e9e9;
+  }
+  .choose-another-plan .btn {
+    float: right;
+  }
+  .choose-another-plan br,
+  .choose-another-plan .fa-pencil {
+    display: none;
+  }
+  .choose-another-plan .btn {
+    display: block;
+  }
+  .cvv-icon {
+    height: auto;
+  }
+  .validate {
+    text-align: right;
+  }
+  /******************wallets***********************/
+  .wallets img {
+    max-width: 50%;
+    height:auto;
+  }
+  .proceesing-request {
+    padding: 80px;
+    margin: 50px 0;
+  }
+  .transaction-successful {
+    font-size: 20px;
+  }
+  .bank-card .bank-card-select {
+    right: -56px;
+    top: -8px;
+  }
+
+  .paymentsuccesfulblock {
+    background-size: 100%;
+  }
+  .paymentsuccesfulblock h1 {
+    padding-top: 30px;
+  }
+  .paymentsuccesfull-white-block p {
+    font-size: 20px;
+  }
+
+  .circle-loader {
+    width: 11em;
+    height: 11em;
+  }
+  .timer {
+    font-size: 42px;
+    top: -113px;
+    left: -3px;
+  }
+  .count {
+    font-size: 42px;
+    top: 10px;
+    left: 0px;
+  }
+  .displayedTime .inline {
+    font-size: 42px;
+  }
+  .split {
+    background: transparent !important;
+    font-size: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+    padding: 0 4px;
+  }
+
+  .circle-loader-bg .split {
+    top: -61px;
+    position: relative;
+}
+.circle-loader-bg .timer, .circle-loader-bg .count {
+  top: -50px;
+  left: 0px;
+}
+  /*--------------------------------------------------------------
+# :modal popup  CSS
+--------------------------------------------------------------*/
+
+  .modal-body {
+    padding: 25px;
+  }
+  .modal h2 {
+    font-size: 25px;
+  }
+  .modal-body .paymentSummaryDetail {
+    margin: 30px 0px 10px 0;
+  }
+  .modal-body .paymentSummaryDetail p {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+  }
+  .btn {
+    min-width: 150px;
+  }
+  .btn-medium,
+  .btn-small {
+    min-width: 96px;
+  }
+  /*--------------------------------------------------------------
+# Footer 
+--------------------------------------------------------------*/
+  .footer-top {
+    padding: 40px 0;
+    font-size: 12px;
+  }
+}
+
+/*-// Large devices (desktops, 992px and up)-------*/
+@media (min-width: 992px) {
+  .card-header {
+    display: none;
+  }
+
+  .paymentsuccesfulblock {
+    padding: 50px 0;
+    width: 800px;
+    background-size: inherit;
+  }
+  .paymentsuccesfull-white-block {
+    padding: 50px;
+    width: 800px;
+  }
+}
+
+/*-// Extra large devices (large desktops, 1200px and up)-------*/
+@media (min-width: 1200px) {
+  .left-sidepanel h1 {
+    font-size: 20px;
+  }
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff !important;
+  border-color: #40b349 !important;
+  background-color: #40b349 !important;
+}
+
+
+.bQRCodeViewMinHeight{
+  min-height:355px
+}
+
+
+.btn.disabled, .btn:disabled
+{
+  opacity: .65;
+    color: #fff;
+}
+
+#CVV {
+  -webkit-text-security: disc;
+}
+
